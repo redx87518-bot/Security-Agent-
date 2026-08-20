@@ -1,0 +1,3 @@
+-addoptionunused
+-keeppackagenames com.cyberfusion.ai
+-dontwarn
