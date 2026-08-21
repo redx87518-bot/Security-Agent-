@@ -7,7 +7,6 @@ import com.cyberfusion.ai.core.network.provider.HttpIntelligenceProvider
 import com.cyberfusion.ai.core.network.provider.IntelligenceProvider
 import com.cyberfusion.ai.core.network.service.CyberFusionApi
 import com.cyberfusion.ai.core.network.service.HttpCyberFusionApi
-import com.cyberfusion.ai.core.security.SecurePreferences
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,21 +19,17 @@ object ProviderModule {
 
     @Provides
     @Singleton
-    suspend fun provideCyberFusionApi(
-        securePreferences: SecurePreferences
-    ): CyberFusionApi {
-        val apiKey = securePreferences.aiApiKey.first() ?: ""
+    fun provideCyberFusionApi(): CyberFusionApi {
+        val apiKey = ""
         val baseUrl = "https://api.cyberfusion.ai"
         return HttpCyberFusionApi(baseUrl = baseUrl, apiKey = apiKey)
     }
 
     @Provides
     @Singleton
-    suspend fun provideIntelligenceProvider(
-        securePreferences: SecurePreferences
-    ): IntelligenceProvider {
-        val apiKey = securePreferences.aiApiKey.first() ?: ""
-        val providerId = securePreferences.aiProvider.first() ?: "cyberfusion"
+    fun provideIntelligenceProvider(): IntelligenceProvider {
+        val apiKey = ""
+        val providerId = "cyberfusion"
         return HttpIntelligenceProvider(
             providerId = providerId,
             displayName = "CyberFusion Intelligence",
@@ -45,11 +40,9 @@ object ProviderModule {
 
     @Provides
     @Singleton
-    suspend fun provideAIProviderConfig(
-        securePreferences: SecurePreferences
-    ): AIProviderConfig {
-        val apiKey = securePreferences.aiApiKey.first() ?: ""
-        val providerId = securePreferences.aiProvider.first() ?: "cyberfusion"
+    fun provideAIProviderConfig(): AIProviderConfig {
+        val apiKey = ""
+        val providerId = "cyberfusion"
         return AIProviderConfig(
             providerId = providerId,
             displayName = "CyberFusion AI",
@@ -61,7 +54,7 @@ object ProviderModule {
 
     @Provides
     @Singleton
-    suspend fun provideAIProvider(
+    fun provideAIProvider(
         config: AIProviderConfig,
         api: CyberFusionApi
     ): AIProvider {
