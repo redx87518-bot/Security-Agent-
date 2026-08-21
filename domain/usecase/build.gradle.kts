@@ -27,6 +27,10 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.kotlinx.coroutines.android)
+    implementation(project(":core:common"))
+    implementation(project(":core:model"))
+    implementation(project(":core:database"))
+    implementation(project(":core:network"))
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 }
