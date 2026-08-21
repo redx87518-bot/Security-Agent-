@@ -64,7 +64,7 @@ class GenerateReportUseCase @Inject constructor(
                         JSONObject().apply {
                             put("id", inv.id)
                             put("title", inv.title)
-                            put("status", inv.status.name)
+                            put("status", inv.status)
                             put("createdAt", inv.createdAt)
                         }
                     }))
