@@ -58,7 +58,7 @@ class IntelligenceViewModel @Inject constructor(
         }
     }
 
-    fun resetState() {
+    suspend fun resetState() {
         _uiState.value = if (!intelligenceProvider.isAvailable()) {
             IntelligenceUiState.NotConfigured
         } else {
