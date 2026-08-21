@@ -19,8 +19,8 @@ class InvestigationRepository @Inject constructor(
     private val dao: CyberFusionDao
 ) {
     fun getAllInvestigations(): Flow<Result<List<InvestigationEntity>>> =
-        dao.getAllInvestigations().map { Result.Success(it) }
-            .catch { emit(Result.Error(it, it.message)) }
+        dao.getAllInvestigations().map { Result.Success(it) as Result<List<InvestigationEntity>> }
+            .catch { emit(Result.Error<List<InvestigationEntity>>(it, it.message)) }
 
     suspend fun getInvestigationById(id: String): Result<InvestigationEntity?> =
         try {
@@ -59,8 +59,8 @@ class IndicatorRepository @Inject constructor(
     private val dao: CyberFusionDao
 ) {
     fun getAllIndicators(): Flow<Result<List<IndicatorEntity>>> =
-        dao.getAllIndicators().map { Result.Success(it) }
-            .catch { emit(Result.Error(it, it.message)) }
+        dao.getAllIndicators().map { Result.Success(it) as Result<List<IndicatorEntity>> }
+            .catch { emit(Result.Error<List<IndicatorEntity>>(it, it.message)) }
 
     suspend fun insertIndicator(indicator: IndicatorEntity): Result<Unit> =
         try {
@@ -76,8 +76,8 @@ class IncidentRepository @Inject constructor(
     private val dao: CyberFusionDao
 ) {
     fun getAllIncidents(): Flow<Result<List<IncidentEntity>>> =
-        dao.getAllIncidents().map { Result.Success(it) }
-            .catch { emit(Result.Error(it, it.message)) }
+        dao.getAllIncidents().map { Result.Success(it) as Result<List<IncidentEntity>> }
+            .catch { emit(Result.Error<List<IncidentEntity>>(it, it.message)) }
 
     suspend fun getIncidentById(id: String): Result<IncidentEntity?> =
         try {
@@ -108,8 +108,8 @@ class RiskRepository @Inject constructor(
     private val dao: CyberFusionDao
 ) {
     fun getAllRisks(): Flow<Result<List<RiskEntity>>> =
-        dao.getAllRisks().map { Result.Success(it) }
-            .catch { emit(Result.Error(it, it.message)) }
+        dao.getAllRisks().map { Result.Success(it) as Result<List<RiskEntity>> }
+            .catch { emit(Result.Error<List<RiskEntity>>(it, it.message)) }
 
     suspend fun getRiskById(id: String): Result<RiskEntity?> =
         try {
@@ -140,8 +140,8 @@ class AlertRepository @Inject constructor(
     private val dao: CyberFusionDao
 ) {
     fun getAllAlerts(): Flow<Result<List<AlertEntity>>> =
-        dao.getAllAlerts().map { Result.Success(it) }
-            .catch { emit(Result.Error(it, it.message)) }
+        dao.getAllAlerts().map { Result.Success(it) as Result<List<AlertEntity>> }
+            .catch { emit(Result.Error<List<AlertEntity>>(it, it.message)) }
 
     suspend fun insertAlert(alert: AlertEntity): Result<Unit> =
         try {
@@ -157,8 +157,8 @@ class LogEventRepository @Inject constructor(
     private val dao: CyberFusionDao
 ) {
     fun getAllLogEvents(): Flow<Result<List<LogEventEntity>>> =
-        dao.getAllLogEvents().map { Result.Success(it) }
-            .catch { emit(Result.Error(it, it.message)) }
+        dao.getAllLogEvents().map { Result.Success(it) as Result<List<LogEventEntity>> }
+            .catch { emit(Result.Error<List<LogEventEntity>>(it, it.message)) }
 
     suspend fun insertLogEvent(event: LogEventEntity): Result<Unit> =
         try {
