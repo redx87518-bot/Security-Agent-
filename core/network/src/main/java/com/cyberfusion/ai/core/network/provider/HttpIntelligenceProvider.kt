@@ -1,6 +1,6 @@
 package com.cyberfusion.ai.core.network.provider
 
-import com.cyberfusion.ai.core.model.AppError
+import com.cyberfusion.ai.core.common.AppError
 import com.cyberfusion.ai.core.model.Result
 import com.cyberfusion.ai.core.network.service.IndicatorAnalysisResult
 import com.cyberfusion.ai.core.network.service.IntelligenceSource

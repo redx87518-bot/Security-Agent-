@@ -35,8 +35,8 @@ class AIOrchestrator @Inject constructor(
                     )
                 )
             }
-            is Result.Error -> result
-            Result.Loading -> Result.Loading
+            is Result.Error -> Result.Error(result.exception, result.message)
+            else -> Result.Loading()
         }
     }
 

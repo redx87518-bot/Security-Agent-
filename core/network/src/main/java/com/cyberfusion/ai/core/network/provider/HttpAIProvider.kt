@@ -1,7 +1,7 @@
 package com.cyberfusion.ai.core.network.provider
 
 import com.cyberfusion.ai.core.model.AIProviderConfig
-import com.cyberfusion.ai.core.model.AppError
+import com.cyberfusion.ai.core.common.AppError
 import com.cyberfusion.ai.core.model.Result
 import com.cyberfusion.ai.core.network.service.CyberFusionApi
 import kotlinx.coroutines.Dispatchers
