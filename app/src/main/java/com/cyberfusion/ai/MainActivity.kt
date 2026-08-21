@@ -8,6 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.cyberfusion.ai.ui.theme.CyberFusionAITheme
+import com.cyberfusion.ai.ui.navigation.CyberFusionNavHost
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
