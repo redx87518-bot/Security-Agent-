@@ -122,3 +122,7 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 }
+
+kapt {
+    correctErrorTypes = true
+}
