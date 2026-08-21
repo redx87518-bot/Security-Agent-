@@ -26,10 +26,10 @@ jobs:
 
       - name: Download Gradle 8.10
         run: |
-          wget -q https://services.gradle.org/distributions/gradle-8.10-bin.zip -O /tmp/gradle.zip
+          wget -q https://services.gradle.org/distributions/gradle-8.10.2-bin.zip -O /tmp/gradle.zip
           unzip -q /tmp/gradle.zip -d /opt/gradle
-          echo "GRADLE_HOME=/opt/gradle/gradle-8.10" >> $GITHUB_ENV
-          echo "/opt/gradle/gradle-8.10/bin" >> $GITHUB_PATH
+          echo "GRADLE_HOME=/opt/gradle/gradle-8.10.2" >> $GITHUB_ENV
+          echo "/opt/gradle/gradle-8.10.2/bin" >> $GITHUB_PATH
 
       - name: Build Debug APK
         run: gradle assembleDebug --no-daemon --stacktrace
