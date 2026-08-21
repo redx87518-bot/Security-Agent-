@@ -1,7 +1,7 @@
 package com.cyberfusion.ai.ui.component
 
 import androidx.compose.material3.Icon
-import androidx.compose.material3.Icons
+import com.cyberfusion.ai.ui.component.CyberFusionIcons
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -42,11 +42,11 @@ fun CyberFusionBottomNavigation(navController: NavHostController) {
                 },
                 icon = {
                     val icon = when (screen) {
-                        Screen.Home -> Icons.Home
-                        Screen.Soc -> Icons.Soc
-                        Screen.Intelligence -> Icons.Intelligence
-                        Screen.Grc -> Icons.Incident
-                        Screen.Settings -> Icons.Settings
+                        Screen.Home -> CyberFusionIcons.Home
+                        Screen.Soc -> CyberFusionIcons.Soc
+                        Screen.Intelligence -> CyberFusionIcons.Intelligence
+                        Screen.Grc -> CyberFusionIcons.Incident
+                        Screen.Settings -> CyberFusionIcons.Settings
                     }
                     Icon(icon, contentDescription = screen.title)
                 },
