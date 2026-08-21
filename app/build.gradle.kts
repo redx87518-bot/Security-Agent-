@@ -39,7 +39,7 @@ android {
         }
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.6.4"
+        kotlinCompilerExtensionVersion = "1.6.2"
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
