@@ -15,7 +15,7 @@ private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(na
 
 @Singleton
 class SecurePreferences @Inject constructor(
-    private val context: Context
+    context: Context
 ) {
     private val apiKeyKey = stringPreferencesKey("ai_api_key")
     private val providerKey = stringPreferencesKey("ai_provider")
