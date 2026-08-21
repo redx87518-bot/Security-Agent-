@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.hilt)
-    alias(libs.plugins.ksp)
+    alias(libs.plugins.kapt)
     alias(libs.plugins.room)
 }
 
@@ -105,11 +105,11 @@ dependencies {
     implementation(libs.retrofit.gson)
 
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    kapt(libs.hilt.compiler)
 
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    ksp(libs.androidx.room.compiler)
+    kapt(libs.androidx.room.compiler)
 
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
