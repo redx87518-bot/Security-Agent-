@@ -46,7 +46,7 @@ class AnalyzeIndicatorUseCase @Inject constructor(
                         Result.Success(validation.type to score)
                     }
                     is Result.Error -> Result.Error(analysisResult.exception, analysisResult.message)
-                    Result.Loading -> Result.Loading
+                    else -> Result.Loading()
                 }
             }
             is IocValidator.ValidationResult.Invalid -> Result.Error(Exception(validation.reason))

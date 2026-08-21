@@ -52,7 +52,7 @@ class AnalyzeLogsUseCase @Inject constructor(
                     )
                 )
             }
-            Result.Loading -> Result.Loading
+            else -> Result.Loading()
         }
     }
 
