@@ -47,6 +47,7 @@ fun CyberFusionBottomNavigation(navController: NavHostController) {
                         Screen.Intelligence -> CyberFusionIcons.Intelligence
                         Screen.Grc -> CyberFusionIcons.Incident
                         Screen.Settings -> CyberFusionIcons.Settings
+                        else -> CyberFusionIcons.Home
                     }
                     Icon(icon, contentDescription = screen.title)
                 },
