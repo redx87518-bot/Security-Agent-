@@ -36,7 +36,7 @@ class IncidentViewModel @Inject constructor(
                         }
                     }
                     is Result.Error -> IncidentUiState.Error(result.message ?: "Unknown error")
-                    Result.Loading -> IncidentUiState.Loading
+                    else -> IncidentUiState.Loading
                 }
             }
         }

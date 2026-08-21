@@ -29,7 +29,7 @@ class ReportsViewModel @Inject constructor(
                 is Result.Error -> {
                     _uiState.value = ReportsUiState.Error(result.message ?: "Report generation failed")
                 }
-                Result.Loading -> _uiState.value = ReportsUiState.Generating
+                else -> _uiState.value = ReportsUiState.Generating
             }
         }
     }

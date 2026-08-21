@@ -46,7 +46,7 @@ class LogAnalysisViewModel @Inject constructor(
                 is Result.Error -> {
                     _uiState.value = LogAnalysisUiState.Failed(result.message ?: "Analysis failed")
                 }
-                Result.Loading -> _uiState.value = LogAnalysisUiState.Loading
+                else -> _uiState.value = LogAnalysisUiState.Loading
             }
         }
     }

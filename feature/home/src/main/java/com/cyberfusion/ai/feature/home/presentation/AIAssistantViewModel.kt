@@ -44,7 +44,7 @@ class AIAssistantViewModel @Inject constructor(
                 is Result.Error -> {
                     _uiState.value = AIAssistantUiState.Error(result.message ?: "Unknown error")
                 }
-                Result.Loading -> _uiState.value = AIAssistantUiState.Loading
+                else -> _uiState.value = AIAssistantUiState.Loading
             }
         }
     }

@@ -53,7 +53,7 @@ class IntelligenceViewModel @Inject constructor(
                 is Result.Error -> {
                     _uiState.value = IntelligenceUiState.Error(result.message ?: "Analysis failed")
                 }
-                Result.Loading -> _uiState.value = IntelligenceUiState.Loading
+                else -> _uiState.value = IntelligenceUiState.Loading
             }
         }
     }

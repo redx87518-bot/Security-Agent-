@@ -36,7 +36,7 @@ class GrcViewModel @Inject constructor(
                         }
                     }
                     is Result.Error -> GrcUiState.Error(result.message ?: "Unknown error")
-                    Result.Loading -> GrcUiState.Loading
+                    else -> GrcUiState.Loading
                 }
             }
         }
