@@ -1,5 +1,4 @@
 package com.cyberfusion.ai.core.security
-import dagger.hilt.android.qualifiers.ApplicationContext
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -16,7 +15,7 @@ private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(na
 
 @Singleton
 class SecurePreferences @Inject constructor(
-    private val context: @ApplicationContext Context
+    private val context: Context
 ) {
     private val apiKeyKey = stringPreferencesKey("ai_api_key")
     private val providerKey = stringPreferencesKey("ai_provider")
