@@ -38,6 +38,9 @@ android {
             versionNameSuffix = "-debug"
         }
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.6.4"
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
