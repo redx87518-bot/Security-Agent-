@@ -49,6 +49,9 @@ android {
             "-opt-in=androidx.lifecycle.compose.collectAsStateWithLifecycle"
         )
     }
+    room {
+        schemaDirectory("$projectDir/schemas")
+    }
     buildFeatures {
         compose = true
         buildConfig = true

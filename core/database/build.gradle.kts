@@ -6,6 +6,9 @@ plugins {
 }
 
 android {
+    room {
+        schemaDirectory("$projectDir/schemas")
+    }
     namespace = "com.cyberfusion.ai.core.database"
     compileSdk = 34
 
