@@ -13,8 +13,8 @@ import javax.inject.Singleton
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "cyberfusion_settings")
 
-@Singleton
-class SecurePreferences @Inject constructor(
+
+class SecurePreferences constructor(
     private val context: Context
 ) {
     private val apiKeyKey = stringPreferencesKey("ai_api_key")
