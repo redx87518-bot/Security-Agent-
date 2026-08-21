@@ -49,7 +49,9 @@ class HomeViewModel @Inject constructor(
                 val indicators = (inds as? Result.Success)?.data ?: emptyList()
                 val risksList = (risks as? Result.Success)?.data ?: emptyList()
 
-                val criticalFindings = (alertsList + incidents).count { 
+                val criticalFindings = alertsList.count { 
+                    it.severity.equals("HIGH", true) || it.severity.equals("CRITICAL", true) 
+                } + incidents.count { 
                     it.severity.equals("HIGH", true) || it.severity.equals("CRITICAL", true) 
                 }
                 val openIncidents = incidents.count { 
